@@ -14,7 +14,7 @@ export const Create = () => {
 
   const handlePostDetails = (event) => {
     event.preventDefault();
-    history.push("/CRUD_Application");
+    history.push("/Details_depictor");
     handleCreate(name, title, body);
   };
   return (

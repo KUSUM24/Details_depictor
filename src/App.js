@@ -186,7 +186,7 @@ function App() {
                             <Route path="/update">
                               <Update />
                             </Route>
-                            <Route path="/CRUD_Application">
+                            <Route path="/Details_depictor">
                               <Main />
                             </Route>
                           </UpdateContext.Provider>

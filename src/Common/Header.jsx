@@ -49,7 +49,7 @@ export const Header = () => {
             Disliked Posts
           </Link>
           <Link
-            to="/CRUD_Application"
+            to="/Details_depictor"
             style={{
               textDecoration: "none",
               color: "black",

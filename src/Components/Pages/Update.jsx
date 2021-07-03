@@ -13,7 +13,7 @@ export const Update = () => {
   const history = useHistory();
   const handleUpdateData = (event) => {
     event.preventDefault();
-    history.push("/CRUD_Application");
+    history.push("/Details_depictor");
     handleUpdateDetails(name, title, body, updatePost.id);
   };
   return (

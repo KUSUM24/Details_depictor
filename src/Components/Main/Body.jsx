@@ -111,7 +111,7 @@ export const Body = ({ statusDisplay }) => {
               <div
                 className={`${
                   likedList.includes(data) ? "btn btn-success" : "btn btn-light"
-                } mx-2`}
+                } `}
                 onClick={() => changeLiked(data.id)}
               >
                 <ThumbUpIcon />
