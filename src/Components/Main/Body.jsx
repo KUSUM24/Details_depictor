@@ -27,9 +27,16 @@ export const Body = ({ statusDisplay }) => {
   const history = useHistory();
 
   const [moreClicked, setMoreClicked] = useState(false);
+  const [btnText, setBtnText] = useState("More");
 
   const handleMore = () => {
-    setMoreClicked(true);
+    if (moreClicked) {
+      setMoreClicked(false);
+      setBtnText("More");
+    } else {
+      setMoreClicked(true);
+      setBtnText("Hide");
+    }
   };
   const createPost = (data) => {
     const changeLiked = (postId) => {
@@ -61,9 +68,43 @@ export const Body = ({ statusDisplay }) => {
                   })}
                 </div>
               </b>
-              <Button onClick={() => handleMore()}>MORE</Button>
-              {moreClicked && <div>More</div>}
+              <Button onClick={() => handleMore()}>{btnText}</Button>
             </div>
+            {moreClicked && (
+              <div>
+                {userList.map((user) => {
+                  if (user.id == data.userId) {
+                    return (
+                      <div style={{ textAlign: "start" }}>
+                        <div>
+                          {" "}
+                          Email: <b>{user.email}</b>
+                        </div>
+                        <div>
+                          {" "}
+                          Website: <b>{user.website}</b>
+                        </div>
+                        <div>
+                          {" "}
+                          Username: <b>{user.username}</b>
+                        </div>
+                        <div>
+                          {" "}
+                          Company Name: <b>{user.company.name}</b>
+                        </div>
+                        <div>
+                          {" "}
+                          Address:{" "}
+                          <b>
+                            {user.address.street}, {user.address.city}
+                          </b>
+                        </div>
+                      </div>
+                    );
+                  }
+                })}
+              </div>
+            )}
           </Card.Body>
           <Card.Footer className="d-flex justify-content-between align-items-center">
             <div className="d-flex">
