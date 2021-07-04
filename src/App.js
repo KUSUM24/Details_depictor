@@ -111,15 +111,38 @@ function App() {
     // });
     // setLikedList(searchedPosts);
   };
-  const handleCreate = (name, title, body) => {
-    let currentPostObject = {};
-    let currentUserObject = {};
-    currentPostObject["userId"] = userList.length + 1;
-    currentPostObject["id"] = postList.length + 1;
-    currentPostObject["title"] = title;
-    currentPostObject["body"] = body;
-    currentUserObject["id"] = userList.length + 1;
-    currentUserObject["name"] = name;
+  const handleCreate = (
+    name,
+    email,
+    website,
+    username,
+    addressStreet,
+    addressCity,
+    company,
+    title,
+    body
+  ) => {
+    let currentPostObject = {
+      userId: userList.length + 1,
+      id: postList.length + 1,
+      title,
+      body,
+    };
+    let currentUserObject = {
+      id: userList.length + 1,
+      name,
+      email,
+      website,
+      username,
+      company: {
+        name: company,
+      },
+      address: {
+        street: addressStreet,
+        city: addressCity,
+      },
+    };
+
     postList.unshift(currentPostObject);
     userList.unshift(currentUserObject);
   };

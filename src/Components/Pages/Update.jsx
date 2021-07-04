@@ -68,7 +68,7 @@ export const Update = () => {
                 <Button type="submit">UPDATE</Button>
                 <Button
                   onClick={() => {
-                    history.push("/CRUD_Application");
+                    history.push("/Details_depictor");
                   }}
                   className="btn btn-dark"
                 >

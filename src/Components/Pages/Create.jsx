@@ -10,19 +10,35 @@ export const Create = () => {
   const [name, setName] = useState("");
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
+  const [email, setEmail] = useState("");
+  const [website, setWebsite] = useState("");
+  const [username, setUsername] = useState("");
+  const [addressStreet, setAddressStreet] = useState("");
+  const [addressCity, setAddressCity] = useState("");
+  const [company, setCompany] = useState("");
   const handleCreate = useContext(CreateContext);
 
   const handlePostDetails = (event) => {
     event.preventDefault();
     history.push("/Details_depictor");
-    handleCreate(name, title, body);
+    handleCreate(
+      name,
+      email,
+      website,
+      username,
+      addressStreet,
+      addressCity,
+      company,
+      title,
+      body
+    );
   };
   return (
     <div>
       <Header />
       <Container
         className="d-flex align-items-center justify-content-center"
-        style={{ minHeight: "75vh" }}
+        style={{ minHeight: "85vh" }}
       >
         <Card
           className="w-100"
@@ -46,10 +62,79 @@ export const Create = () => {
                   />
                 </div>
                 <div className="form-group col-md-6">
-                  <label>Title</label>
+                  <label>Email</label>
                   <Form.Control
                     className="my-2"
-                    placeholder="Title"
+                    placeholder="Email"
+                    value={email}
+                    onChange={(value) => setEmail(value.target.value)}
+                    required
+                  />
+                </div>
+              </div>
+              <div className="row">
+                <div className="form-group col-md-6 ">
+                  <label>Website</label>
+
+                  <Form.Control
+                    className="my-2"
+                    placeholder="Website"
+                    value={website}
+                    onChange={(value) => setWebsite(value.target.value)}
+                    required
+                  />
+                </div>
+                <div className="form-group col-md-6">
+                  <label>Username</label>
+                  <Form.Control
+                    className="my-2"
+                    placeholder="Username"
+                    value={username}
+                    onChange={(value) => setUsername(value.target.value)}
+                    required
+                  />
+                </div>
+              </div>
+              <div className="row">
+                <div className="form-group col-md-6 ">
+                  <label>Address Street</label>
+
+                  <Form.Control
+                    className="my-2"
+                    placeholder="Address Street"
+                    value={addressStreet}
+                    onChange={(value) => setAddressStreet(value.target.value)}
+                    required
+                  />
+                </div>
+                <div className="form-group col-md-6">
+                  <label>Address City</label>
+                  <Form.Control
+                    className="my-2"
+                    placeholder="Address City"
+                    value={addressCity}
+                    onChange={(value) => setAddressCity(value.target.value)}
+                    required
+                  />
+                </div>
+              </div>
+              <div className="row">
+                <div className="form-group col-md-6 ">
+                  <label>Company Name</label>
+
+                  <Form.Control
+                    className="my-2"
+                    placeholder="Company"
+                    value={company}
+                    onChange={(value) => setCompany(value.target.value)}
+                    required
+                  />
+                </div>
+                <div className="form-group col-md-6">
+                  <label>Post Title</label>
+                  <Form.Control
+                    className="my-2"
+                    placeholder="Post Title"
                     value={title}
                     onChange={(value) => setTitle(value.target.value)}
                     required
@@ -57,13 +142,13 @@ export const Create = () => {
                 </div>
               </div>
               <Form.Group>
-                <label>Body</label>
+                <label>Post Body</label>
 
                 <Form.Control
                   as="textarea"
                   rows={3}
                   className="my-2"
-                  placeholder="Body"
+                  placeholder="Post Body"
                   value={body}
                   onChange={(value) => setBody(value.target.value)}
                   required
