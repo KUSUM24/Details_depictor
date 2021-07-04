@@ -38,13 +38,16 @@ export const Create = () => {
       <Header />
       <Container
         className="d-flex align-items-center justify-content-center"
-        style={{ minHeight: "85vh" }}
+        style={{ minHeight: "90vh" }}
       >
         <Card
           className="w-100"
           style={{ maxWidth: "800px", border: "1px solid" }}
         >
-          <Card.Header className="card-heading text-center text-white bg-dark">
+          <Card.Header
+            className="card-heading text-center text-white bg-dark"
+            style={{ fontSize: "130%" }}
+          >
             <b>Post Details</b>
           </Card.Header>
           <Card.Body>

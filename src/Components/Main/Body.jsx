@@ -13,7 +13,6 @@ import {
   UpdateContext,
   UserContext,
 } from "../../App";
-import "./styles/body.css";
 import { useHistory } from "react-router-dom";
 
 export const Body = ({ statusDisplay }) => {
@@ -51,7 +50,10 @@ export const Body = ({ statusDisplay }) => {
     };
     return (
       <>
-        <Card className="text-center m-4 w-75">
+        <Card
+          style={{ boxShadow: "5px 5px 10px rgb(131, 130, 130)" }}
+          className="text-center m-4 w-75"
+        >
           <Card.Header className="card-header bg-dark text-white">
             <b>{data.title} </b>
           </Card.Header>
