@@ -103,13 +103,6 @@ function App() {
       }
     });
     setPostList(searchedPosts);
-    // searchedPosts = [];
-    // fakeLikeList.forEach((post) => {
-    //   if (post.title.match(reg) || post.body.match(reg)) {
-    //     searchedPosts.push(post);
-    //   }
-    // });
-    // setLikedList(searchedPosts);
   };
   const handleCreate = (
     name,
